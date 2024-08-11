@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <header className='fixed top-0 w-full h-16 bg-black bg-opacity-50 z-40'> 
-        <div className='container px-12 flex items-center h-full'>
+        <div className='w-full flex items-center h-full px-4 lg:px-12'>
             <Link to={"/"}>
                 <img
                 src={logo}
@@ -49,7 +49,7 @@ const Header = () => {
                 }
             </nav>
 
-            <div className='ml-auto flex items-center gap-5'>
+            <div className='ml-auto flex items-center gap-5 justify-end'>
                 <form className='flex items-center gap-2' onSubmit={handleSubmit}>
                     <input
                         type='text'

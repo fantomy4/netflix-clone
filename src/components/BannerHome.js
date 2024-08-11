@@ -58,9 +58,9 @@ const BannerHome = () => {
                         <div className='absolute top-0 w-full h-full bg-gradient-to-t from-neutral-900 to-transparent'></div>
 
                         <div className='container mx-10'>
-                            <div className='w-full absolute bottom-0 max-w-md px-3'>
+                            <div className='w-full absolute bottom-40 max-w-md px-3'>
                                 <h2 className='font-bold text-2xl lg:text-4xl text-white drop-shadow-2xl'>{data?.title || data?.name}</h2>
-                                <p className='text-ellipsis line-clamp-3 my-2'>{data.overview}</p>
+                                <p className='text-ellipsis line-clamp-4 my-4'>{data.overview}</p>
                                 <div className='flex items-center gap-4'>
                                     <p>Rating : {Number(data.vote_average).toFixed(1)}+</p>
                                     <span>|</span>
