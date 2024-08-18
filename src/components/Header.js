@@ -49,7 +49,7 @@ const Header = () => {
                 }
             </nav>
 
-            <div className='ml-auto flex items-center gap-5'>
+            <div className='ml-auto flex items-center gap-5 justify-end'>
                 <form className='flex items-center gap-2' onSubmit={handleSubmit}>
                     <input
                         type='text'
