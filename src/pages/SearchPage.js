@@ -9,9 +9,11 @@ const SearchPage = () => {
     const [page, setPage] = useState(1)
     const navigate = useNavigate()
 
+    const query = location?.search?.slice(3)
+
     const fetchData = async()=> {
       try {
-        const response = await axios.get(`/search/collection`,{
+        const response = await axios.get(`/search/multi`,{
           params : {
             query : location?.search?.slice(3),
             page : page
@@ -29,9 +31,11 @@ const SearchPage = () => {
     }
 
     useEffect(()=>{
-      setPage(1)
-      setData([])
-      fetchData()
+      if(query) {
+        setPage(1)
+        setData([])
+        fetchData()
+      }
     },[location?.search])
 
     const handleScroll = ()=> {
@@ -41,7 +45,9 @@ const SearchPage = () => {
     }
 
     useEffect(()=>{
-      fetchData()
+      if(query) {
+        fetchData()
+      }
     },[page])
 
     useEffect(()=>{
@@ -52,7 +58,14 @@ const SearchPage = () => {
     <div className='py-16'>
 
       <div className='lg:hidden my-2 mx-1 sticky top-[70px] z-30'>
-        <input type='text' placeholder='Search...' onChange={(e)=> navigate(`/search?q=${e.target.value}`)} className='px-4 py-1 text-lg w-full bg-white rounded-full text-neutral-900'></input>
+        <input 
+        type='text' 
+        placeholder='Search...' 
+        onChange={(e)=> navigate(`/search?q=${e.target.value}`)} 
+        value={query.split("%20").join(" ")}
+        className='px-4 py-1 text-lg w-full bg-white rounded-full text-neutral-900'
+        >
+        </input>
       </div>
       <div className='container mx-12'>
         <h3 className='capitalize text-lg lg:text-xl font-semibold my-3'>Search Results</h3>
