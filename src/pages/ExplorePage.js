@@ -51,19 +51,20 @@ const ExplorePage = () => {
   },[])
   return (
     <div className='py-16'>
-      <div className='container px-1 mx-auto'>
+    <div className='container mx-auto'>
         <h3 className='capitalize text-lg lg:text-xl font-semibold my-3'>Popular {params.explore} show</h3>
-          <div className='grid grid-cols-5 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-6 gap-6'>
-            {
-              data.map((exploreData, index)=>{
-                return(
-                  <Card data={exploreData} key={exploreData.id+"exploreSection"} media_type={params.explore}></Card>
-                )
-              })
-            }
-          </div>
-      </div>
+
+        <div className='grid grid-cols-[repeat(auto-fit,230px)] gap-6 justify-center lg:justify-start'>
+          {
+            data.map((exploreData,index)=>{
+              return(
+                <Card data={exploreData} key={exploreData.id+"exploreSEction"} media_type={params.explore}/>
+              )
+            })
+          }
+        </div>
     </div>
+</div>
   )
 }
 
