@@ -12,10 +12,12 @@ A Netflix-like web application built using **React** and **React Router** to mim
 
 ## Tech Stack
 
-- **Frontend**: React, React Router, JavaScript (ES6+), CSS (for styling)
+- **Frontend**: React, React Router, JavaScript (ES6+), HTML, CSS (for styling).
+- **Libraries**: Axios, Redux.
+- **Server**: Node.js
 - **API**: Using a mock API or a third-party movie database API like [TMDb](https://www.themoviedb.org/) for content.
 - **Version Control**: Git
-- **Tools**: VSCode, ESLint, Prettier
+- **Tools**: VSCode
 
 ## Installation and Setup
 
